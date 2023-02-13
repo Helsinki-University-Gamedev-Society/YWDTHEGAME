@@ -1,0 +1,156 @@
+[gd_resource type="Theme" load_steps=27 format=2]
+
+[ext_resource path="res://Sprites/GUI/empty.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/GUI/tabs.png" type="Texture" id=2]
+[ext_resource path="res://UI/Font/ImprovGOLD.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://UI/Font/ImprovGOLD_dynamicfont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Sprites/GUI/scrollbarbackground.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/GUI/scrollbarbutton.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/GUI/scrollbarhbackground.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/GUI/downloadbar.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/GUI/downloadprogressbar.png" type="Texture" id=9]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 5, 0, 5, 5 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = SubResource( 11 )
+region_rect = Rect2( 0, 0, 5, 5 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 5, 5 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = SubResource( 10 )
+region_rect = Rect2( 0, 0, 5, 5 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 5, 5, 5 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 4.0
+margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 15, 5 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="DynamicFont" id=4]
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = -5
+extra_spacing_bottom = -1
+extra_spacing_space = -3
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 10, 5 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 5, 5 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="DynamicFont" id=3]
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = -5
+extra_spacing_bottom = -1
+extra_spacing_space = -3
+font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 7 )
+region = Rect2( 10, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 5, 5 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = SubResource( 12 )
+region_rect = Rect2( 0, 0, 1, 1 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 5, 0, 5, 5 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = SubResource( 13 )
+region_rect = Rect2( 0, 0, 5, 5 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 5, 15 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[resource]
+default_font = SubResource( 3 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 2 )
+Button/styles/pressed = SubResource( 1 )
+HScrollBar/styles/grabber = SubResource( 16 )
+HScrollBar/styles/grabber_highlight = SubResource( 16 )
+HScrollBar/styles/grabber_pressed = SubResource( 16 )
+HScrollBar/styles/scroll = SubResource( 17 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/fonts/font = SubResource( 4 )
+ProgressBar/styles/bg = SubResource( 20 )
+ProgressBar/styles/fg = SubResource( 21 )
+RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
+RichTextLabel/fonts/normal_font = SubResource( 3 )
+TabContainer/constants/label_valign_bg = 16
+TabContainer/constants/label_valign_fg = 7
+TabContainer/constants/side_margin = 0
+TabContainer/icons/decrement = SubResource( 18 )
+TabContainer/icons/decrement_highlight = SubResource( 18 )
+TabContainer/icons/increment = SubResource( 19 )
+TabContainer/icons/increment_highlight = SubResource( 19 )
+TabContainer/styles/panel = SubResource( 6 )
+TabContainer/styles/tab_bg = SubResource( 14 )
+TabContainer/styles/tab_disabled = SubResource( 14 )
+TabContainer/styles/tab_fg = SubResource( 6 )
+Tabs/constants/hseparation = 16
+Tabs/fonts/font = SubResource( 3 )
+TooltipLabel/fonts/font = ExtResource( 4 )
+VScrollBar/styles/grabber = SubResource( 16 )
+VScrollBar/styles/grabber_highlight = SubResource( 16 )
+VScrollBar/styles/grabber_pressed = SubResource( 16 )
+VScrollBar/styles/scroll = SubResource( 15 )

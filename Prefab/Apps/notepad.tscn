@@ -1,0 +1,142 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Sprites/windowgui.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/GUI/closebutton.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/GUI/maximizebutton.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/GUI/minimizebutton.png" type="Texture" id=4]
+[ext_resource path="res://UI/ButtonTheme.tres" type="Theme" id=5]
+[ext_resource path="res://Scripts/Apps/notepad_app.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Apps/save_notepad.gd" type="Script" id=7]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 5, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 5, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 5, 0, 5, 5 )
+
+[node name="Window" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -64.0
+margin_bottom = -88.0
+script = ExtResource( 6 )
+
+[node name="DragBar" type="Control" parent="."]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 30.0
+margin_bottom = 6.0
+mouse_filter = 1
+
+[node name="Icon" type="NinePatchRect" parent="."]
+margin_right = 320.0
+margin_bottom = 200.0
+theme = SubResource( 1 )
+texture = ExtResource( 1 )
+patch_margin_left = 3
+patch_margin_top = 7
+patch_margin_right = 3
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Button" type="Button" parent="Icon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 7.0
+margin_right = -276.0
+margin_bottom = -184.0
+focus_mode = 0
+theme = ExtResource( 5 )
+enabled_focus_mode = 0
+text = "Save"
+
+[node name="OptionContainer" type="HBoxContainer" parent="Icon"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -18.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = 6.0
+grow_horizontal = 0
+mouse_filter = 2
+custom_constants/separation = 1
+alignment = 2
+
+[node name="MiniButton" type="TextureButton" parent="Icon/OptionContainer"]
+margin_right = 5.0
+margin_bottom = 5.0
+theme = ExtResource( 5 )
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_disabled = SubResource( 2 )
+
+[node name="FullScreenButton" type="TextureButton" parent="Icon/OptionContainer"]
+margin_left = 6.0
+margin_right = 11.0
+margin_bottom = 5.0
+theme = ExtResource( 5 )
+texture_normal = SubResource( 4 )
+texture_pressed = SubResource( 5 )
+texture_disabled = SubResource( 5 )
+
+[node name="CloseButton" type="TextureButton" parent="Icon/OptionContainer"]
+margin_left = 12.0
+margin_right = 17.0
+margin_bottom = 5.0
+theme = ExtResource( 5 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_disabled = SubResource( 7 )
+
+[node name="Label" type="Label" parent="Icon"]
+margin_left = 1.0
+margin_right = 50.0
+margin_bottom = 6.0
+theme = ExtResource( 5 )
+text = "Notepad
+"
+clip_text = true
+
+[node name="WindowContent" type="TabContainer" parent="Icon"]
+margin_left = 1.0
+margin_top = 7.0
+margin_right = 317.0
+margin_bottom = 190.0
+mouse_filter = 2
+theme = ExtResource( 5 )
+tab_align = 0
+drag_to_rearrange_enabled = true
+
+[node name="text" type="TextEdit" parent="Icon/WindowContent"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 9.0
+margin_right = -1.0
+margin_bottom = -1.0
+wrap_enabled = true
+script = ExtResource( 7 )
+
+[connection signal="pressed" from="Icon/Button" to="Icon/WindowContent/text" method="_on_save"]
